@@ -55,7 +55,7 @@ class Usuario //inicio clase
              die($t->getMessage());
          }          
      }
-     public function ListarUsuarioActivos()
+     public function ListarUsuariosActivos()
      {
          try
          {
@@ -71,7 +71,7 @@ class Usuario //inicio clase
              die($t->getMessage());
          }
      }
-     public function ListarUsuarioInactivos()
+     public function ListarUsuariosInactivos()
      {
         try
         {

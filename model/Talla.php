@@ -1,131 +1,115 @@
 <?php
-class Talla 
+class Talla
 {
-    private  $pdo;
-    //atributos
+    private $pdo;
+
     public $idtalla;
     public $nombre;
     public $estado;
 
-    public function _CONSTRUCT()
+    public function __CONSTRUCT()
     {
         try
         {
-           $this->pdo = Conexion::Conectar();
+            $this->pdo = Conexion::Conectar();
         }
-            catch (Throwable $t)
-            {
+        catch (Throwable $t)
+        {
             die($t->getMessage());
-            }
         }
-        public function RegistrarTalla($data)
-        {
-           try
-           {
-               $sql = "INSERT INTO talla(nombre)
-               VALUES(?)";
-               $this->pdo->prepare($sql)->execute(array( $data->nombre));
-           }
-           catch (Throwable $t)
-           {
-               die($t->getMessage());
-           }
-        }
+    }
     
-        public function ListarTallasActivas()
+    public function RegistrarTalla($data)
+    {
+        try
         {
-            try
-            {
-               
-                $stm = $this->pdo->prepare("SELECT idtalla, nombre FROM talla WHERE estado = 1");
-                
-                $stm->execute();
+            $sql = "INSERT INTO talla(nombre) VALUES(?)";
 
-                return $stm->fetchAll(PDO::FETCH_OBJ);
-            }
-            catch (Throwable $t)
-            {
-                die($t->getMessage());
-            }
+            $this->pdo->prepare($sql)->execute(array($data->nombre));
+
         }
-
-        public function ListarTallasInactivas()
+        catch (Trowable $t)
         {
-            try
-            {
-
-                $stm = $this->pdo->prepare("SELECT idtalla, nombre FROM talla WHERE estado = 0");
-                $stm->execute();
-
-                return $stm->fetchAll(PDO::FETCH_OBJ);
-            }
-            catch (Throwable $t)
-            {
-                die($t->getMessage());
-            }
+            die($t->getMessage());
         }
+    }
 
-        public function ObtenerTalla($id)
+    public function ListarTallasActivas()
+    {
+        try
         {
-            try
-            {
-                $stm = $this->pdo
-                ->prepare("SELECT * FROM talla WHERE idtalla = ?");
-                
-                $stm->execute(array($id));
+            $stm = $this->pdo->prepare("SELECT idtalla, nombre FROM talla WHERE estado = 1");
+            
+            $stm->execute();
 
-                return $stm->fetch(PDO::FETCH_OBJ);
-            }
-            catch (Throwable $t)
-            {
-                die($t->getMessage());
-            }
+            return $stm->fetchAll(PDO::FETCH_OBJ);
         }
-
-        public function ActualizarTalla($data)
+        catch (Trowable $t)
         {
-            try
-            {
-                $sql = "UPDATE talla SET
-                      nombre = ?
-                WHERE idtalla = ?";
-
-             $this->pdo->prepare($sql)
-                  ->execute(
-                    array(
-     
-                   $data->nombre,
-                   $data->idtalla
-                       )  
-                       );             
-
-                }
-                catch (Throwable $t)
-                {
-                    die($t->getMessage());
-                }
+            die($t->getMessage());
         }
+    }
 
-            public function cambiarEstadotalla($nuevo_estado, $id)
-            {
-                try
-            {
-                  $sql = "UPDATE talla SET
-                  estado = ?
-                  WHERE idtalla = ?";
+    public function ListarTallasInactivas()
+    {
+        try
+        {
+            $stm = $this->pdo->prepare("SELECT idtalla, nombre FROM talla WHERE estado = 0");
+            
+            $stm->execute();
 
-                  $this->pdo->prepare($sql)
-                  ->execute(
-                      array(
-                          $nuevo_estado,
-                          $id
-                    )
-                      );
-            }
-             catch (Throwable $t)
-                {
-                    die ($t->getMessage());
-                }
-                }
-            }
- ?>
+            return $stm->fetchAll(PDO::FETCH_OBJ);
+        }
+        catch (Trowable $t)
+        {
+            die($t->getMessage());
+        }
+    }
+
+    public function ObtenerTalla($id)
+    {
+        try
+        {
+            $stm = $this->pdo->prepare("SELECT * FROM talla WHERE idtalla = ?");
+            
+            $stm->execute(array($id));
+
+            return $stm->fetch(PDO::FETCH_OBJ);
+        }
+        catch (Trowable $t)
+        {
+            die($t->getMessage());
+        }
+    }
+
+    public function ActualizarTalla($data)
+    {
+        try
+        {
+            $sql = "UPDATE talla SET nombre = ? WHERE idtalla = ?";
+
+            $this->pdo->prepare($sql)->execute(array($data->nombre, $data->idtalla));
+
+        }
+        catch (Trowable $t)
+        {
+            die($t->getMessage());
+        }
+    }
+
+    public function CambiarEstadoTalla($nuevo_estado, $id)
+    {
+        try
+        {
+            $sql = "UPDATE talla SET estado = ? WHERE idtalla = ?";
+
+            $this->pdo->prepare($sql)->execute(array($nuevo_estado, $id));
+
+        }
+        catch (Trowable $t)
+        {
+            die($t->getMessage());
+        }
+    }
+}
+?>

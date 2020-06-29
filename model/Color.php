@@ -7,7 +7,7 @@
         public $nombre;
         public $estado;
 
-        public function _CONSTRUCT()
+        public function __CONSTRUCT()
         {
             try
             {

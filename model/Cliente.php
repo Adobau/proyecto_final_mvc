@@ -42,7 +42,7 @@ public function RegistrarCliente($data)
                 $data->email,
                 $data->sexo,
                 $data->fechanacimiento,
-                $data->idusuarioregistro,
+                $data->idusuarioregistro
             )
             );
 
@@ -53,7 +53,7 @@ public function RegistrarCliente($data)
         }
     }
 
-    public function ListarClienteActivos()
+    public function ListarClientesActivos()
     {
         try
         {

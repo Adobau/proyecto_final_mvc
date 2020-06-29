@@ -12,42 +12,47 @@
     <div class="section">
 
       <!--   Form Section   -->
-      <div class="row form-background">
-        <form class="col s12 ">
-          <div class="row">
+      <div class="row card form-background">
+        <form class="col s12" action="?c=<?php echo base64_encode('Usuario'); ?>&a=<?php echo base64_encode('RegistrarUsuario'); ?>" method="post">
+        <div class="row">
+
+            <div class="input-field col s12">
+            <br>
+            </div>
+
             <div class="input-field col s6">
               <i class="material-icons prefix form-icon">person</i>
-              <input id="nombres" type="text" class="validate">
-              <label for="nombres">Nombres</label>
+              <input id="nombre" type="text" class="validate" name="nombre" required autofocus>
+              <label for="nombre">Nombres</label>
             </div>
 
             <div class="input-field col s6">
               <i class="material-icons prefix form-icon">person_outline</i>
-              <input id="apellidos" type="text" class="validate">
-              <label for="apellidos">Apellidos</label>
+              <input id="apellido" type="text" class="validate" name="apellido" required>
+              <label for="apellido">Apellidos</label>
             </div>
 
             <div class="input-field col s6">
               <i class="material-icons prefix form-icon">phone</i>
-              <input id="telefono" type="text" class="validate">
+              <input id="telefono" type="text" class="validate" name="telefono" required>
               <label for="telefono">Teléfono</label>
             </div>
 
             <div class="input-field col s6">
               <i class="material-icons prefix form-icon">mail</i>
-              <input id="email" type="email" class="validate">
+              <input id="email" type="email" class="validate" name="email" required>
               <label for="email">Email</label>
             </div>
 
             <div class="input-field col s6">
               <i class="material-icons prefix form-icon">vpn_key</i>
-              <input id="clave1" type="password" class="validate">
+              <input id="clave1" type="password" class="validate" name="clave1" required>
               <label for="clave1">Clave</label>
             </div>
 
             <div class="input-field col s6">
               <i class="material-icons prefix form-icon">vpn_key</i>
-              <input id="clave2" type="password" class="validate">
+              <input id="clave2" type="password" class="validate" name="clave2" required>
               <label for="clave2">Confirmar clave</label>
             </div>
 
@@ -56,23 +61,24 @@
               <label for="idpreguntasecreta">Pregunta secreta</label>
               <br>
             </div>
-            <div class="input-field col s12">
-              <select id="idpreguntasecreta" name="idpreguntasecreta" class="validate">
-                <option value="1">Pregunta 1</option>
-                <option value="2">Pregunta 2</option>
-                <option value="3">Pregunta 3</option>
+            <div class="input-field col s12">              
+            <i class="material-icons prefix form-icon">arrow_drop_down</i>
+            <select id="idpreguntasecreta" name="idpreguntasecreta" class="validate" required>                
+                <?php foreach($this->modelPreguntaSecreta->ListarPreguntasSecretas() as $r): ?>
+                    <option value="<?php echo $r->idpreguntasecreta; ?>"><?php echo $r->nombre; ?></option>
+                <?php endforeach; ?>
               </select>
             </div>
 
             <div class="input-field col s6">
               <i class="material-icons prefix form-icon">keyboard</i>
-              <input id="respuestasecreta1" type="password" class="validate">
+              <input id="respuestasecreta1" type="password" class="validate" name="respuestasecreta1" required>
               <label for="respuestasecreta1">Respuesta</label>
             </div>
 
             <div class="input-field col s6">
               <i class="material-icons prefix form-icon">keyboard</i>
-              <input id="respuestasecreta2" type="password" class="validate">
+              <input id="respuestasecreta2" type="password" class="validate" name="respuestasecreta2" required>
               <label for="respuestasecreta2">Confirmar respuesta</label>
             </div>
 
@@ -81,11 +87,12 @@
               <label for="idtipousuario">Tipo de usuario</label>
               <br>
             </div>
-            <div class="input-field col s12">
-              <select id="idtipousuario" name="idtipousuario" class="validate">
-                <option value="1">Tipo 1</option>
-                <option value="2">Tipo 2</option>
-                <option value="3">Tipo 3</option>
+            <div class="input-field col s12">              
+            <i class="material-icons prefix form-icon">arrow_drop_down</i>
+            <select id="idtipousuario" name="idtipousuario" class="validate" required>              
+                <?php foreach($this->modelTipoUsuario->ListarTiposUsuarios() as $r): ?>
+                    <option value="<?php echo $r->idtipousuario; ?>"><?php echo $r->nombre; ?></option>
+                <?php endforeach; ?>
               </select>
             </div>
             

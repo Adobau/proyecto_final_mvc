@@ -5,7 +5,7 @@
       
       <h1 class="header center orange-text">Proyecto con php-mvc-mysql</h1>
       <div class="row center">
-        <h5 class="header col s12 light gris-ast-text">Proyecto BNM</h5>
+        <h5 class="header col s12 light gris-ast-text">Proyecto ACD</h5>
       
       </div>
 

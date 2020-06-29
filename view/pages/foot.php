@@ -24,8 +24,8 @@
         <div class="col l3 s12">
           <h5 class="white-text">Contactos</h5>
           <ul>
-            <li><a class="white-text" href="mailto:brayannolasco011@gmail.com">Cristian Vladimir Orellana Orellana</a></li>
-            <li><a class="white-text"  target="_blank">Adonis Alejandro Marín Bautista</a></li>
+          <li><a class="white-text" href="mailto:adonisbautista39@gmail.com">Adonis Alejandro Marin Bautista</a></li>
+            <li><a class="white-text"  target="_blank">Cristian Vladimir Orellana Orellana</a></li>
             <li><a class="white-text" target="_blank">Douglas Josué Ayala Córdova</a></li>
           </ul>
         </div>
@@ -38,7 +38,7 @@
     </div>
     <div class="footer-copyright gris-ast">
       <div class="container">
-      by <a class="white-text"  target="_blank">Adonis Alejandro Marín Bautista | Tecnico en Ingenieria en Sistema Informatico.</a>
+      by <a class="white-text"  target="_blank">Adonis Bautista | Tecnico en Ingenieria en Sistema Informatico.</a>
       </div>
     </div>
   </footer>
