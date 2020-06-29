@@ -1,0 +1,95 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+ .icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+/* colores ast */
+.azul-ast {
+  background-color: #007396 !important;
+}
+
+.azul-ast-text {
+  color: #007396 !important;
+}
+
+.gris-ast {
+  background-color: #546E7A !important;
+}
+
+.gris-ast-text {
+  color: #546E7A !important;
+}
+
+.naranja-ast {
+  background-color: #ED8B00 !important;
+}
+
+.naranja-ast-text {
+  color: #ED8B00 !important;
+}
+
+/* tamaño de los iconos */
+.size-icono-home {
+  font-size: 8em;
+}
+
+/* fondo y letra de los tabs */
+.tab-activos{
+  background-color: #ED8B00 !important;
+  border-radius: 10px 10px 0px 0px;
+  color: #ffffff !important;
+}
+
+.tab-inactivos{
+  background-color: #546E7A !important;
+  border-radius: 10px 10px 0px 0px;;
+  color: #ffffff !important;
+}
+
+/* separador <hr> */
+.separador{
+  border-top: 1px solid #007396 !important;
+  border-bottom: 1px solid #fff;
+}
+
+/* estilo para los formularios */
+  /* label color */
+   .input-field label {
+     color: #546E7A !important;
+   } 
+
+  /* icon color */
+  .form-icon{
+    color: #007396 !important;
+  }
+  
+  /* icon active color */
+  .material-icons.active {
+    color: #ED8B00 !important;
+  }
+
+  /* label focus color */
+  .input-field input:focus + label{
+    color: #ED8B00 !important;
+  }
+
+  /* label underline focus color */
+  .row .input-field input:focus {
+    border-bottom: 1px solid #ED8B00 !important;
+    box-shadow: 0 1px 0 0 #ED8B00 !important;
+  }
+
+  /* span color checked */
+  input:checked + span {
+    color:#ED8B00 !important;
+  }
